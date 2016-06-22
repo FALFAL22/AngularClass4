@@ -1,0 +1,36 @@
+
+
+<div class="container-fluid">
+  
+  
+
+  <div class="row">
+    <div class="col-sm-7" >
+        <p>Vistas</p>
+        <div class="wrapperTable" keep-scroll>
+          <table class="table table-striped" scroll-item>
+          <tr>
+             <th>Descripcion</th>
+             <th>Cantidad</th>
+             <th>Precio</th>
+          </tr>
+          <tr>
+          <tr ng-repeat="x in venta track by $index">
+            <td>{{ x.nombre }}</td>
+            <td>{{ x.cantidad }}</td>
+            <td>{{ x.precio * x.cantidad}}</td>
+          </tr>
+          </tr>
+          </table>
+        </div>
+    </div>
+    <div class="col-sm-5" >
+    <p>Productos</p>
+      <div class="wrapper" keep-scroll>
+          <div class="item" scroll-item ng-repeat="p in data track by $index" ng-class-odd="'odd'" ng-class-even="'even'" ng-click="agregar(p)">{{p.nombre}}</div>
+      </div>
+    </div>
+</div>
+
+  
+</div>
