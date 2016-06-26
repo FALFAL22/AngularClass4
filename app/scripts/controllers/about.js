@@ -17,15 +17,17 @@ app.controller('AboutCtrl', function ($scope, ProdSrv) {
     console.log('about' + prds);
   });
 
-  $scope.agregar = function(x){
-  	ProdSrv.add(x,function(res){
-  		$scope.message = "se grabo";
-    });
-  };
 });
 
-app.controller('DetailCtrl', function ($scope, $routeParams, ProdSrv) {
+app.controller('DetailCtrl', function ($scope, $routeParams, $location, ProdSrv) {
   ProdSrv.detail($routeParams.id, function(p) {
     $scope.producto = p;
   });
+
+  $scope.remove = function(id) {
+    ProdSrv.rm(id, function(res) {
+      $location.path('/about');
+    });
+  };
+
 });

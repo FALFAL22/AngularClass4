@@ -27,7 +27,7 @@
     <div class="col-sm-5" >
     <p>Productos</p>
       <div class="wrapper" keep-scroll>
-          <div class="item" scroll-item ng-repeat="p in data track by $index" ng-class-odd="'odd'" ng-class-even="'even'" ng-click="agregar(p)">{{p.nombre}}</div>
+          <div class="item" scroll-item ng-repeat="p in data | orderBy : 'nombre' track by $index" ng-class-odd="'odd'" ng-class-even="'even'" ng-click="agregar(p)">{{p.nombre}}</div>
       </div>
     </div>
 </div>

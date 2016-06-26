@@ -36,7 +36,7 @@ angular
       })
       .when('/detail/:id', {
         templateUrl: 'views/detail.html',
-        controller: 'LoginCtrl',
+        controller: 'DetailCtrl',
         controllerAs: 'about'
       })
       .otherwise({
